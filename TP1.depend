@@ -1,0 +1,187 @@
+# depslib dependency file v1.0
+1413324994 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\src\cajacola.cpp
+	<new>
+	"CajaCola.h"
+
+1413324994 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\include\cajacola.h
+
+1413325928 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\src\cajalisarray.cpp
+	"CajaLisArray.h"
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\include\cajalisarray.h
+	"CajSubLSE2.h"
+	<iostream>
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\include\cajsublse2.h
+	"CajaLisArray.h"
+
+1413325928 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\src\cajlse.cpp
+	"CajLSE.h"
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\include\cajlse.h
+	"CajSubLSE1.h"
+	<iostream>
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\include\cajsublse1.h
+	"CajLSE.h"
+
+1413324996 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\src\cajsublse1.cpp
+	"CajSubLSE1.h"
+
+1413324996 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\src\cajsublse2.cpp
+	"CajSubLSE2.h"
+
+1413325680 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\main.cpp
+	<iostream>
+	"Cola.h"
+	"Arbol1.h"
+	"Arbol2.h"
+
+1413325772 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\include\cola.h
+	<iostream>
+	"CajaCola.h"
+
+1413325288 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\include\arbol1.h
+	"CajLSE.h"
+	<iostream>
+
+1413324994 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\include\arbol2.h
+	"CajaLisArray.h"
+	<iostream>
+
+1413325288 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\src\arbol1.cpp
+	"Arbol1.h"
+
+1413325680 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\src\arbol2.cpp
+	"Arbol2.h"
+
+1413325814 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v4\tp1\src\cola.cpp
+	"Cola.h"
+
+1413325680 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\main.cpp
+	<iostream>
+	"Cola.h"
+	"Arbol1.h"
+	"Arbol2.h"
+
+1413325772 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\include\cola.h
+	<iostream>
+	"CajaCola.h"
+
+1413324994 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\include\cajacola.h
+
+1413325288 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\include\arbol1.h
+	"CajLSE.h"
+	<iostream>
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\include\cajlse.h
+	"CajSubLSE1.h"
+	<iostream>
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\include\cajsublse1.h
+	"CajLSE.h"
+
+1413324994 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\include\arbol2.h
+	"CajaLisArray.h"
+	<iostream>
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\include\cajalisarray.h
+	"CajSubLSE2.h"
+	<iostream>
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\include\cajsublse2.h
+	"CajaLisArray.h"
+
+1413325944 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\src\arbol1.cpp
+	"Arbol1.h"
+
+1413325680 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\src\arbol2.cpp
+	"Arbol2.h"
+
+1413324994 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\src\cajacola.cpp
+	<new>
+	"CajaCola.h"
+
+1413325928 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\src\cajalisarray.cpp
+	"CajaLisArray.h"
+
+1413325928 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\src\cajlse.cpp
+	"CajLSE.h"
+
+1413324996 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\src\cajsublse1.cpp
+	"CajSubLSE1.h"
+
+1413324996 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\src\cajsublse2.cpp
+	"CajSubLSE2.h"
+
+1413325814 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v16\tp1\src\cola.cpp
+	"Cola.h"
+
+1413341610 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\main.cpp
+	<iostream>
+	"Cola.h"
+	"Arbol1.h"
+	"Arbol2.h"
+	"Pila.h"
+
+1413325772 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\include\cola.h
+	<iostream>
+	"CajaCola.h"
+
+1413324994 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\include\cajacola.h
+
+1413340530 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\include\arbol1.h
+	"CajLSE.h"
+	<iostream>
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\include\cajlse.h
+	"CajSubLSE1.h"
+	<iostream>
+
+1413324996 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\include\cajsublse1.h
+	"CajLSE.h"
+
+1413341604 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\include\arbol2.h
+	"CajaLisArray.h"
+	<iostream>
+
+1413341604 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\include\cajalisarray.h
+	"CajSubLSE2.h"
+	<iostream>
+
+1413341604 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\include\cajsublse2.h
+	"CajaLisArray.h"
+
+1413340540 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\arbol1.cpp
+	"Arbol1.h"
+
+1413341604 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\arbol2.cpp
+	"Arbol2.h"
+
+1413324994 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\cajacola.cpp
+	<new>
+	"CajaCola.h"
+
+1413341604 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\cajalisarray.cpp
+	"CajaLisArray.h"
+
+1413325928 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\cajlse.cpp
+	"CajLSE.h"
+
+1413324996 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\cajsublse1.cpp
+	"CajSubLSE1.h"
+
+1413341604 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\cajsublse2.cpp
+	"CajSubLSE2.h"
+
+1413341780 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\cola.cpp
+	"Cola.h"
+
+1413338710 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\arbolhihd.cpp
+
+1413341158 source:j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\src\pila.cpp
+	"Pila.h"
+
+1413339350 j:\iisem 2014\analisis de algoritmos\1era tarea programada 2do avanse\v17\tp1\include\pila.h
+	<iostream>
+
