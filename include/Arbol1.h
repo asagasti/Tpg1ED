@@ -5,7 +5,7 @@
 
 
 using namespace std;
-class CajLSE;
+class nodo;
 class Arbol
 {
 public:
@@ -14,19 +14,19 @@ public:
     void Vaciar();///probado
     bool Vacio();///probado
     void PoneRaiz(int elem);///probado
-    void AgregaHijo(CajLSE *padre, int e);///probado
-    void BorraHoja(CajLSE *aBorrar);///probado
-    void ModificaEtiqueta(CajLSE *aCambiar, int elem);///probado
-    CajLSE * Raiz();///probado
-    CajLSE *Padre(CajLSE *hijo);///probado
-    CajLSE *Pertenece(int i);///probado
-    CajLSE *HijoMasIzquierdo(CajLSE *padre);///probado
-    CajLSE *HermanoDerecho(CajLSE *hermano);
-    int Etiqueta(CajLSE *yo);///probado
-    bool EsHoja(CajLSE *c);///probado
+    void AgregaHijo(nodo *padre, int e);///probado
+    void BorraHoja(nodo *aBorrar);///probado
+    void ModificaEtiqueta(nodo *aCambiar, int elem);///probado
+    nodo * Raiz();///probado
+    nodo *Padre(nodo *hijo);///probado
+    nodo *Pertenece(int i);///probado
+    nodo *HijoMasIzquierdo(nodo *padre);///probado
+    nodo *HermanoDerecho(nodo *hermano);
+    int Etiqueta(nodo *yo);///probado
+    bool EsHoja(nodo *c);///probado
     void mostrarLprincipal();///probado
 
-    CajLSE *raiz;
+    nodo *raiz;
     int numElem;
 protected:
 private:
