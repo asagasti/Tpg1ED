@@ -248,24 +248,18 @@ int Algoritmos::AlturaNodoRe(Arbol *a, nodo *n)
 
 void Algoritmos::borrarSubArbolRe(Arbol *a, nodo *n)
 {
-    cout << "entro"<< endl;
-    cout << a->Etiqueta(n)<< endl;
     if((a->HijoMasIzquierdo(n)!=0))
     {
-        cout << "1"<< endl;
         nodo *iter=a->HijoMasIzquierdo(n);
+        nodo *iter2;
         while (iter!=0)
         {
-            cout << "2"<< endl;
+            iter2=a->HermanoDerecho(iter);
             borrarSubArbolRe(a,iter);
-            cout << "3"<< endl;
-            iter=a->HermanoDerecho(iter);
-            cout << "4"<< endl;
+            iter=iter2;
         }
     }
-    cout << "5"<< endl;
     a->BorraHoja(n);
-    cout << "6"<< endl;
 }
 
 
