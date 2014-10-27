@@ -1,17 +1,145 @@
-#include <iostream>
-#include "Cola.h"
-#include "Arbol1.h"
-#include "Arbol2.h"
-#include "Pila.h"
-using namespace std;
 
+    #include <iostream>
+#include "Cola.h"
+//#include "Arbol1.h"
+#include "Arbol2.h"
+#include "CajLisArray.h"
+
+#include "Algoritmos.h"
+using namespace std;
+using std::cout;
+using std::endl;
+class Arbol2;
+class nodo;
+class Algoritmos;
 int main()
 {
     cout << "Hello world!" << endl;
-    cout<<"��Bienvenido a las pruebas de las clases Cola, Pila y Arbol!! :)"<<endl;
-    cout<<"    �� Que lo disfrutes!! =D"<<endl;
+    cout<<"¡¡Bienvenido a las pruebas de las clases Cola, Pila y Arbol!! :)"<<endl;
+    cout<<"    ¡¡ Que lo disfrutes!! =D"<<endl;
     cout<<endl<<endl<<endl;
 
+//using std::list;
+
+/**-Especificar los siguientes algoritmos para el modelo Árbol tal que NO importa el orden entre
+los hijos de un nodo. Para cada algoritmo debe incluir: nombre, parámetros con sus tipos y
+las cláusulas Efecto (claro, completo y conciso), Requiere y Modifica.
+*/
+
+/**a. Averiguar cuál es el hermano izquierdo de un nodo. prob
+b. Averiguar la altura de un nodo (distancia que hay desde el nodo hasta la hoja
+descendiente más alejada). prob
+c. Averiguar si el árbol tiene etiquetas repetidas. prob
+d. Averiguar cuántos niveles tiene el árbol.prob
+e. Averiguar cuántos hijos tiene un nodo. prob
+f. Listar las etiquetas correspondientes a los hijos de un nodo. prob
+g. Borrar el Sub-Árbol que se genera a partir de un nodo. no fun todavia
+h. Copiar un Árbol. prob
+*/
+
+
+
+
+
+    Arbol2 *a2=new Arbol2();
+    cout <<"Inicio de la prueba de Arbol"<<endl;
+    a2->PoneRaiz(7);
+    cout << endl;
+    cout << endl;
+    a2->AgregaHijo((a2->Raiz()),8);
+    a2->AgregaHijo((a2->Raiz()),9);
+    a2->AgregaHijo((a2->Raiz()),10);
+    a2->AgregaHijo((a2->Raiz()),11);
+    //a2->AgregaHijo((a2->Raiz()),67);
+    nodo *n=(a2->Pertenece(8));
+    a2->AgregaHijo(n,12);
+    a2->AgregaHijo(n,13);
+    a2->AgregaHijo(n,14);
+    n=(a2->Pertenece(12));
+    a2->AgregaHijo(n,18);
+    n=(a2->Pertenece(18));
+    a2->AgregaHijo(n,19);
+    a2->AgregaHijo(n,20);
+    n=(a2->Pertenece(20));
+    a2->AgregaHijo(n,21);
+    a2->AgregaHijo(n,22);
+    a2->AgregaHijo(n,23);
+    n=(a2->Pertenece(10));
+    a2->AgregaHijo(n,15);
+    n=(a2->Pertenece(11));
+    cout << "Repetidos?"<<((alg->etiquetasRepetidas(a2))?"True":"False")<<endl;
+    cout << "Debio dar falso"<<endl;
+//    cout<<"desp pert 11"<<endl;
+    a2->AgregaHijo(n,16);
+    a2->AgregaHijo(n,17);
+    a2->mostrarLprincipal();
+    cout << "Repetidos?"<<((alg->etiquetasRepetidas(a2))?"True":"False")<<endl;
+    cout << "Debio dar falso"<<endl;
+    n=(a2->Pertenece(11));
+    a2->AgregaHijo(n,7);
+    cout <<"agrego 7"<< endl;
+    cout << "Repetidos?"<<((alg->etiquetasRepetidas(a2))?"True":"False")<<endl;
+    cout << "Debio dar true"<<endl;
+    cout<<"HermanoIzquierdo del nodo con etiqueta 9"<<endl;
+    cout<<alg->HermanoIzquierdo(a2,9)<<endl;
+//////    cout<<"Resultado esperado en arboles 1 y 2: 10"<<endl;
+//////    cout<<"Resultado esperado en arboles 3,4 y 5: 8"<<endl;
+////////    cout<<alg->AlturaNodo(n)<<endl;
+    cout<<"Altura del nodo con etiqueta 11=";
+    cout<<alg->AlturaNodo(a2,11)<<endl;
+    cout<<"Altura esperada:2"<<endl;
+    cout<<"Cuantos niveles tiene un arbol=";
+    cout<<alg->nivelesArbol(a2)<<endl;
+    cout<<"Niveles esperados:6"<<endl;
+    cout<<"Cuantos hijos tiene la raiz=";
+    cout<<alg->hijosNodo(a2,a2->Raiz())<<endl;
+    cout<<"Hijos esperados:4"<<endl;
+    cout<<"Cuantos hijos tiene el nodo con etiqueta 8=";
+    cout<<alg->hijosNodo(a2,a2->Pertenece(8))<<endl;
+    cout<<"Hijos esperados:3"<<endl;
+    cout<<"Cuantos hijos tiene el nodo con etiqueta 9=";
+    cout<<alg->hijosNodo(a2,a2->Pertenece(9))<<endl;
+    cout<<"Hijos esperados:0"<<endl;
+    cout<<"Cuantos hijos tiene el nodo con etiqueta 10=";
+    cout<<alg->hijosNodo(a2,a2->Pertenece(10))<<endl;
+    cout<<"Hijos esperados:1"<<endl;
+    cout<<"Lista de hijos del nodo con etiqueta 10=>";
+    n=a2->Pertenece(10);
+    alg->listarHijosNodo(a2,n);
+    cout<<"Hijos esperados:15"<<endl;
+    cout<<"Lista de hijos del nodo con etiqueta 19=>";
+    n=a2->Pertenece(19);
+    alg->listarHijosNodo(a2,n);
+    cout<<"Hijos esperados:no tiene"<<endl;
+    cout<<"Lista de hijos del nodo con etiqueta 10=>";
+    n=a2->Pertenece(11);
+    alg->listarHijosNodo(a2,n);
+    cout<<"Hijos esperados:7,17,16 en los arboles 1 y 2"<<endl;
+    cout<<"Hijos esperados:16,17,7 en los arboles 3,4y5"<<endl;
+    cout << endl;
+    cout << endl;
+    a2->mostrarLprincipal();
+    cout<<"Debido a las diferentes estructuras de datos con que se implementaron los arboles los resultados de las funciones hijoMasIzquierdo y HermanoDerecho pueden variar. Cada nodo siempre va a tener al mismo padre, a los mismo hermanos, a los mismo hijos pero el orden en que sus hijos y hermanos varia por lo que eso cambia."<<endl;
+    cout << endl;
+    Arbol2 *aCopia=new Arbol2();
+    cout<<"Arbol copiado:"<<endl;
+    alg->copiarArbol(a2,aCopia);
+    n=a2->Pertenece(17);
+    aCopia->mostrarLprincipal();
+    cout << "antes de entrar a borrar sub arbol"<< endl;
+    alg->borrarSubArbol(a2,n);
+    a2->mostrarLprincipal();
+    cout << "antes de entrar a borrar sub arbol"<< endl;
+    n=a2->Pertenece(20);
+    alg->borrarSubArbol(a2,n);
+    a2->mostrarLprincipal();
+    cout<<"Final de la prueba de Arbol"<<endl;
+
+
+
+}
+
+/*
 //    CajLSE *HijoMasIzquierdo(CajLSE *padre);
 //    CajLSE *HermanoDerecho(CajLSE *hermano);
 
@@ -103,7 +231,7 @@ int main()
     /*Inicia prueba de pila*/
 
 
-
+/*
 
 
     cout<<"Inicia prueba de pila"<<endl;
