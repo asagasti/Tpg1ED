@@ -2,10 +2,11 @@
 #define COLA_H
 #include <iostream>
 #include "CajaCola.h"
+#include "CajaCola.h"
 using namespace std;
 
 class CajaCola;
-
+class nodo;
 class Cola
 {
 public:
@@ -13,9 +14,9 @@ public:
     virtual ~Cola();//Destructor de la cola.
     void Vaciar();
     bool Vacia();
-    void Agregar(int elem);
-    int Sacar();
-    int Frente();
+    void Agregar(nodo *n);
+    nodo * Sacar();
+    nodo * Frente();
     void mostrarEnPantalla();
     CajaCola *ultim;
     CajaCola *prim;
@@ -24,5 +25,3 @@ private:
 };
 
 #endif // COLA_H
-
-
