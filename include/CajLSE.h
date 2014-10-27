@@ -1,24 +1,24 @@
-#ifndef CAJLSE_H
-#define CAJLSE_H
+#ifndef NODO_H
+#define NODO_H
 #include "CajSubLSE1.h"
 #include <iostream>
 
 
 using namespace std;
 class CajSubLSE1;
-class CajLSE
+class nodo
 {
 public:
-    CajLSE();
-    CajLSE(int i);
-    virtual ~CajLSE();
-    void borrarHijo(CajLSE *aBorrar);
-    void agregarHijo(CajLSE *h);
-    bool esPadreDe(CajLSE *posibleHijo);
+    nodo();
+    nodo(int i);
+    virtual ~nodo();
+    void borrarHijo(nodo *aBorrar);
+    void agregarHijo(nodo *h);
+    bool esPadreDe(nodo *posibleHijo);
     bool EsHoja();
     void mostrarHijosPantalla();
     CajSubLSE1 * HMI;
-    CajLSE * sig;
+    nodo * sig;
     int miElem;
 protected:
 private:
