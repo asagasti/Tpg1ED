@@ -56,11 +56,11 @@ Requiere: A inicializado y vacío, y e válida en A.
 Modifica: A.*/
 void Arbol::PoneRaiz(int elem)
 {
-    cout<<"1"<<endl;
+
     miArbol[0]=new nodo(elem);
-    cout<<"2"<<endl;
+
     ultimo=1;
-    cout<<"3"<<endl;
+
 }
 /*AgregaHijo(tipoNodo n, tipoEtiqueta e, tipoÁrbol A)
 Efecto: Agrega un nodo con la etiqueta e como hijo del nodo n en el árbol A
@@ -78,7 +78,7 @@ void Arbol::AgregaHijo(nodo *padre, int e)
 Efecto: Elimina n del árbol A
 Requiere: A inicializado, n válido en A y que n sea una hoja
 Modifica: A*/
-void Arbol::BorraHoja(nodo *aBorrar)
+void Arbol2::BorraHoja(nodo *aBorrar)
 {
     int j=0;
     if(aBorrar!=miArbol[0])
@@ -88,18 +88,13 @@ void Arbol::BorraHoja(nodo *aBorrar)
         {
             if((miArbol[j]->HMI!=0)&&(miArbol[j]->HMI->ptrMiElem==aBorrar))
             {
-                miArbol[j]->HMI=0;
-                noEncontrado=false;
-            }
-            else if((miArbol[j]->HMI!=0))
-            {
-                if(miArbol[j]->HMI->ptrMiElem==aBorrar)
-                {
-                    miArbol[j]->HMI=miArbol[j]->HMI->sig;
+                CajSubLSE2 *aBorrar=miArbol[j]->HMI;
+                    CajSubLSE2 *r=aBorrar->sig;
+                    miArbol[j]->HMI=r;
                     noEncontrado=false;
-                }
-                else
-                {
+            }
+            else if((miArbol[j]->HMI!=0)&&(miArbol[j]->HMI->ptrMiElem!=aBorrar))
+            {
                     CajSubLSE2 *iter=miArbol[j]->HMI;
                     while((iter!=0)&&(noEncontrado))
                     {
@@ -114,7 +109,7 @@ void Arbol::BorraHoja(nodo *aBorrar)
                         {
                             iter=iter->sig;
                         }
-                    }
+//                    }
                 }
             }
             j=j+1;
