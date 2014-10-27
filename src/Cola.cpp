@@ -1,6 +1,6 @@
 #include "Cola.h"
 /*Crear(tipoCola C)
-Efecto: inicializa en memoria un contenedor de tipo cola vacío
+Efecto: inicializa en memoria un contenedor de tipo cola vacÃ­o
 Requiere: C no inicializada
 Modifica: C*/
 Cola::Cola()//ctor
@@ -9,7 +9,7 @@ Cola::Cola()//ctor
     prim=0;
 }
 /*Destruir(tipoCola C)
-Efecto: Elimina lógicamente a C de la memoria
+Efecto: Elimina lÃ³gicamente a C de la memoria
 Requiere: C inicializada
 Modifica: C*/
 Cola::~Cola() //dtor
@@ -27,7 +27,7 @@ Cola::~Cola() //dtor
     }
 }
 /*Vaciar(tipoCola C)
-Efecto: Vacía a C de contenido
+Efecto: VacÃ­a a C de contenido
 Requiere: C inicializada
 Modifica: C*/
 void Cola::Vaciar()
@@ -39,9 +39,9 @@ void Cola::Vaciar()
 }
 
 /*
-Vacía(tipoCola C)
+VacÃ­a(tipoCola C)
 Devuelve: Un booleano
-Efecto: Devuelve verdadero si C está vacía y falso si no
+Efecto: Devuelve verdadero si C estÃ¡ vacÃ­a y falso si no
 Requiere: C inicializada
 Modifica: N/A*/
 bool Cola::Vacia()
@@ -53,10 +53,10 @@ bool Cola::Vacia()
 Efecto: Agrega el elemento e a la cola C
 Requiere: C inicializada
 Modifica: C*/
-void Cola::Agregar(int elem)  //enColar
+void Cola::Agregar(nodo *n)  //enColar
 {
     CajaCola *c=new CajaCola();
-    c->ponValor(elem);
+    c->ponValor(n);
     if(Vacia())
     {
         prim=ultim=c;
@@ -71,12 +71,12 @@ void Cola::Agregar(int elem)  //enColar
 /*Sacar(tipoCola C)
 Devuelve: TipoElemento e (opcional)
 Efecto: Elimina el primer elemento de C, y opcionalmente lo devuelve
-Requiere: C inicializada y no vacía
+Requiere: C inicializada y no vacÃ­a
 Modifica: C*/
-int Cola::Sacar()  //desEncolar
+nodo * Cola::Sacar()  //desEncolar
 {
     CajaCola *c=prim;
-    int fren=Frente();
+    nodo * fren=Frente();
     prim=prim->obSig();
     delete c;
     return fren;
@@ -85,9 +85,9 @@ int Cola::Sacar()  //desEncolar
 /*Frente(tipoCola C)
 Devuelve: TipoElemento e
 Efecto: Retorna e, el primer elemento de la cola C
-Requiere: C inicializada y no vacía
+Requiere: C inicializada y no vacÃ­a
 Modifica: N/A*/
-int Cola::Frente()
+nodo * Cola::Frente()
 {
     return prim->obValor();
 }
@@ -112,17 +112,4 @@ void Cola::mostrarEnPantalla()
         cout <<""<<endl;
     }
 }
-/*
 
-
-
-
-
-
-
-
-
-
-
-
-*/
