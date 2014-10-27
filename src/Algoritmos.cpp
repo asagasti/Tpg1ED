@@ -1,4 +1,5 @@
-Enter file contents here#include "Algoritmos.h"
+
+#include "Algoritmos.h"
 #include <algorithm>
 /**
 ya a. Averiguar cuál es el hermano izquierdo de un nodo.
@@ -220,7 +221,6 @@ int Algoritmos::AlturaNodo(Arbol *a, int etiqueta)
 int Algoritmos::AlturaNodoRe(Arbol *a, nodo *n)
 {
     int nivelMayor=1;
-    cout<<"Etiq:"<<a->Etiqueta(n)<<endl;
     if(a->Etiqueta(n)!=(17))
     {
         if(!n->EsHoja())
