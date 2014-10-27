@@ -41,7 +41,7 @@ h. Copiar un Árbol. prob
 
 
 
-    Arbol2 *a2=new Arbol2();
+    Arbol2 *a=new Arbol2();
     cout <<"Inicio de la prueba de Arbol"<<endl;
     a2->PoneRaiz(7);
     cout << endl;
@@ -72,7 +72,6 @@ h. Copiar un Árbol. prob
 //    cout<<"desp pert 11"<<endl;
     a2->AgregaHijo(n,16);
     a2->AgregaHijo(n,17);
-    a2->mostrarLprincipal();
     cout << "Repetidos?"<<((alg->etiquetasRepetidas(a2))?"True":"False")<<endl;
     cout << "Debio dar falso"<<endl;
     n=(a2->Pertenece(11));
@@ -118,21 +117,17 @@ h. Copiar un Árbol. prob
     cout<<"Hijos esperados:16,17,7 en los arboles 3,4y5"<<endl;
     cout << endl;
     cout << endl;
-    a2->mostrarLprincipal();
     cout<<"Debido a las diferentes estructuras de datos con que se implementaron los arboles los resultados de las funciones hijoMasIzquierdo y HermanoDerecho pueden variar. Cada nodo siempre va a tener al mismo padre, a los mismo hermanos, a los mismo hijos pero el orden en que sus hijos y hermanos varia por lo que eso cambia."<<endl;
     cout << endl;
     Arbol2 *aCopia=new Arbol2();
     cout<<"Arbol copiado:"<<endl;
     alg->copiarArbol(a2,aCopia);
     n=a2->Pertenece(17);
-    aCopia->mostrarLprincipal();
     cout << "antes de entrar a borrar sub arbol"<< endl;
     alg->borrarSubArbol(a2,n);
-    a2->mostrarLprincipal();
     cout << "antes de entrar a borrar sub arbol"<< endl;
     n=a2->Pertenece(20);
     alg->borrarSubArbol(a2,n);
-    a2->mostrarLprincipal();
     cout<<"Final de la prueba de Arbol"<<endl;
 
 
