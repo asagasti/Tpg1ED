@@ -16,7 +16,7 @@ Modifica: A.*/
 Arbol::~Arbol()
 {
     //dtor
-    CajLSE *iter;
+    nodo *iter;
     while (!Vacio())
     {
         iter=raiz;
@@ -35,7 +35,7 @@ Requiere: A inicializado
 Modifica: A.*/
 void Arbol::Vaciar()
 {
-    CajLSE *iter;
+   nodo *iter;
     while (!Vacio())
     {
         iter=raiz;
@@ -72,9 +72,9 @@ void Arbol::PoneRaiz(int elem)
 Efecto: Agrega un nodo con la etiqueta e como hijo del nodo n en el árbol A
 Requiere: A inicializado, n válido en A
 Modifica: A*/
-void Arbol::AgregaHijo(CajLSE *padre, int e)
+void Arbol::AgregaHijo(nodo *padre, int e)
 {
-    CajLSE *nuevo=new CajLSE(e);
+    nodo *nuevo=new nodo(e);
     nuevo->sig=raiz->sig;
     raiz->sig=nuevo;
     padre->HMI=new CajSubLSE1(nuevo,padre->HMI);
@@ -85,7 +85,7 @@ void Arbol::AgregaHijo(CajLSE *padre, int e)
 Efecto: Elimina n del árbol A
 Requiere: A inicializado, n válido en A y que n sea una hoja
 Modifica: A*/
-void Arbol::BorraHoja(CajLSE *aBorrar)
+void Arbol::BorraHoja(nodo *aBorrar)
 {
     if(aBorrar!=raiz)
     {
@@ -97,7 +97,9 @@ void Arbol::BorraHoja(CajLSE *aBorrar)
             {
                 if(iter->HMI->ptrMiElem==aBorrar)
                 {
-                    iter->HMI=0;
+                    CajSubLSE1 *aBorrar=iter->HMI;
+                    iter->HMI=iter->HMI->sig;
+                    delete aBorrar;
                     noEncontrado=false;
                 }
                 else
@@ -147,7 +149,7 @@ void Arbol::BorraHoja(CajLSE *aBorrar)
 Efecto: Actualiza la etiqueta de n a e
 Requiere: A inicializado, n válido en A.
 Modifica: A*/
-void Arbol::ModificaEtiqueta(CajLSE *aCambiar, int elem)
+void Arbol::ModificaEtiqueta(nodo *aCambiar, int elem)
 {
     aCambiar->miElem=elem;
 }
@@ -157,7 +159,7 @@ Devuelve: tipoNodo
 Efecto: Devuelve el nodo raíz de A.
 Requiere: A inicializado y no vacío
 Modifica: N/A*/
-CajLSE *Arbol::Raiz()
+nodo *Arbol::Raiz()
 {
     return raiz;
 }
@@ -167,13 +169,13 @@ Devuelve: tipoNodo
 Efecto: Devuelve el nodo padre de n.
 Requiere: A inicializado y n válido en A
 Modifica: N/A*/
-CajLSE *Arbol::Padre(CajLSE *hijo)
+nodo *Arbol::Padre(nodo *hijo)
 {
-    CajLSE *padre=0;
+    nodo *padre=0;
     if(hijo!=raiz)
     {
         bool noEncontrado=true;
-        CajLSE *iter=raiz;
+        nodo *iter=raiz;
         while((iter!=0)&&(noEncontrado))
         {
             if(iter->HMI!=0)
@@ -211,7 +213,7 @@ Devuelve: tipoNodo
 Efecto: Devuelve el nodo hijo más izquierdo de n
 Requiere: A inicializado y n válido en A
 Modifica: N/A*/
-CajLSE *Arbol::HijoMasIzquierdo(CajLSE *padre)
+nodo *Arbol::HijoMasIzquierdo(nodo *padre)
 {
          if(padre->HMI==0)
     {
@@ -229,9 +231,9 @@ Devuelve: tipoNodo
 Efecto: Devuelve el nodo hermano derecho de n
 Requiere: A inicializado y n válido en A
 Modifica: N/A.*/
-CajLSE *Arbol::HermanoDerecho(CajLSE *hermano)
+nodo *Arbol::HermanoDerecho(nodo *hermano)
 {
-    CajLSE *padre=Padre(hermano);
+    nodo *padre=Padre(hermano);
     CajSubLSE1 *iter=padre->HMI;
     bool encontrado=false;
     while (!encontrado)
@@ -253,7 +255,7 @@ Devuelve: tipoEtiqueta
 Efecto: Devuelve la etiqueta de n
 Requiere: A inicializado y n válido en A
 Modifica: N/A*/
-int Arbol::Etiqueta(CajLSE *yo)
+int Arbol::Etiqueta(nodo *yo)
 {
     return yo->miElem;
 }
@@ -263,7 +265,7 @@ Devuelve: tipoBooleano
 Efecto: Devuelve verdadero si n no tiene hijos y falso si no
 Requiere: A inicializado y n válido en A
 Modifica: N/A*/
-bool Arbol::EsHoja(CajLSE *c)
+bool Arbol::EsHoja(nodo *c)
 {
     return (c->HMI==0);
 }
