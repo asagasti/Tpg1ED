@@ -1,7 +1,7 @@
 #include "Arbol2.h"
 /*
-Crear (tipo¡rbol A)
-Efecto: Inicializa en memoria un contenedor de tipo ·rbol vacÌo
+Crear (tipo√Årbol A)
+Efecto: Inicializa en memoria un contenedor de tipo √°rbol vac√≠o
 Requiere: A no inicializado
 Modifica: A*/
 Arbol2::Arbol2()
@@ -10,8 +10,8 @@ Arbol2::Arbol2()
 }
 
 
-/*Destruir (tipo¡rbol A)
-Efecto: Elimina lÛgicamente a A de la memoria
+/*Destruir (tipo√Årbol A)
+Efecto: Elimina l√≥gicamente a A de la memoria
 Requiere: A inicializado
 Modifica: A.*/
 Arbol2::~Arbol2()
@@ -26,7 +26,7 @@ Arbol2::~Arbol2()
     }
 }
 
-/*Vaciar(tipo¡rbol A)
+/*Vaciar(tipo√Årbol A)
 Efecto: Vacia a A de contenido
 Requiere: A inicializado
 Modifica: A.*/
@@ -41,18 +41,18 @@ void Arbol2::Vaciar()
     }
     ultimo=0;
 }
-/*VacÌo(tipo¡rbol A)
+/*Vac√≠o(tipo√Årbol A)
 Devuelve: Un booleano
-Efecto: Devuelve verdadero si A est· vacÌo y falso si no
+Efecto: Devuelve verdadero si A est√° vac√≠o y falso si no
 Requiere: A inicializado
 Modifica: N/A*/
 bool Arbol2::Vacio()
 {
     return ultimo==0;
 }
-/*PoneRaÌz(tipoEtquieta e, tipo¡rbol A)
-Efecto: Crea un TipoNodo n que contiene la etiqueta e, y lo establece como la raÌz.
-Requiere: A inicializado y vacÌo, y e v·lida en A.
+/*PoneRa√≠z(tipoEtquieta e, tipo√Årbol A)
+Efecto: Crea un TipoNodo n que contiene la etiqueta e, y lo establece como la ra√≠z.
+Requiere: A inicializado y vac√≠o, y e v√°lida en A.
 Modifica: A.*/
 void Arbol2::PoneRaiz(int elem)
 {
@@ -62,9 +62,9 @@ void Arbol2::PoneRaiz(int elem)
     ultimo=1;
     cout<<"3"<<endl;
 }
-/*AgregaHijo(tipoNodo n, tipoEtiqueta e, tipo¡rbol A)
-Efecto: Agrega un nodo con la etiqueta e como hijo del nodo n en el ·rbol A
-Requiere: A inicializado, n v·lido en A
+/*AgregaHijo(tipoNodo n, tipoEtiqueta e, tipo√Årbol A)
+Efecto: Agrega un nodo con la etiqueta e como hijo del nodo n en el √°rbol A
+Requiere: A inicializado, n v√°lido en A
 Modifica: A*/
 void Arbol2::AgregaHijo(nodo *padre, int e)
 {
@@ -74,9 +74,9 @@ void Arbol2::AgregaHijo(nodo *padre, int e)
     miArbol[ultimo]=nuevo;
     ultimo=ultimo+1;
 }
-/*BorraHoja(tipoNodo n, tipo¡rbol A)
-Efecto: Elimina n del ·rbol A
-Requiere: A inicializado, n v·lido en A y que n sea una hoja
+/*BorraHoja(tipoNodo n, tipo√Årbol A)
+Efecto: Elimina n del √°rbol A
+Requiere: A inicializado, n v√°lido en A y que n sea una hoja
 Modifica: A*/
 void Arbol2::BorraHoja(nodo *aBorrar)
 {
@@ -86,31 +86,41 @@ void Arbol2::BorraHoja(nodo *aBorrar)
         bool noEncontrado=true;
         while((j<ultimo)&&(noEncontrado))
         {
-            if(miArbol[j]->HMI->ptrMiElem==aBorrar)
+            if((miArbol[j]->HMI!=0)&&(miArbol[j]->HMI->ptrMiElem==aBorrar))
             {
                 miArbol[j]->HMI=0;
                 noEncontrado=false;
             }
-            else
+            else if((miArbol[j]->HMI!=0))
             {
-                CajSubLSE2 *iter=miArbol[j]->HMI;
-                while((iter!=0)&&(iter->sig!=0)&&(noEncontrado))
+                if(miArbol[j]->HMI->ptrMiElem==aBorrar)
                 {
-                    if(iter->sig->ptrMiElem==aBorrar)
+                    miArbol[j]->HMI=miArbol[j]->HMI->sig;
+                    noEncontrado=false;
+                }
+                else
+                {
+                    CajSubLSE2 *iter=miArbol[j]->HMI;
+                    while((iter!=0)&&(noEncontrado))
                     {
-                        noEncontrado=false;
-                        iter->sig=iter->sig->sig;
-                    }
-                    else
-                    {
-                        iter=iter->sig;
+                        if((iter->sig!=0)&&(iter->sig->ptrMiElem->miElem==aBorrar->miElem))
+                        {
+                            noEncontrado=false;
+                            CajSubLSE2 *t=iter->sig;
+                            t=t->sig;
+                            iter->sig=t;
+                        }
+                        else
+                        {
+                            iter=iter->sig;
+                        }
                     }
                 }
-                j=j+1;
             }
+            j=j+1;
         }
         noEncontrado=true;
-        int k=j+1;
+        int k=j-1;
         while(noEncontrado&&k<ultimo)
         {
             if(miArbol[k]==aBorrar)
@@ -123,7 +133,7 @@ void Arbol2::BorraHoja(nodo *aBorrar)
             }
         }
         nodo *a=miArbol[k];
-        for(int i=k; i<ultimo; ++i)
+        for(int i=k; i<ultimo-1; ++i)
         {
             miArbol[i]=miArbol[i+1];
         }
@@ -132,18 +142,19 @@ void Arbol2::BorraHoja(nodo *aBorrar)
     ultimo=ultimo-1;
 }
 
-/*ModificaEtiqueta(tipoNodo n, tipoEtiqueta e, tipo¡rbol A)
+
+/*ModificaEtiqueta(tipoNodo n, tipoEtiqueta e, tipo√Årbol A)
 Efecto: Actualiza la etiqueta de n a e
-Requiere: A inicializado, n v·lido en A.
+Requiere: A inicializado, n v√°lido en A.
 Modifica: A*/
 void Arbol2::ModificaEtiqueta(nodo *aCambiar, int elem)
 {
     aCambiar->miElem=elem;
 }
-/*RaÌz(tipo¡rbol A)
+/*Ra√≠z(tipo√Årbol A)
 Devuelve: tipoNodo
-Efecto: Devuelve el nodo raÌz de A.
-Requiere: A inicializado y no vacÌo
+Efecto: Devuelve el nodo ra√≠z de A.
+Requiere: A inicializado y no vac√≠o
 Modifica: N/A*/
 nodo *Arbol2::Raiz()
 {
@@ -163,10 +174,10 @@ nodo *Arbol2::Padre(int hijo)
     }
 }
 
-/*Padre(tipoNodo n, tipo¡rbol A)
+/*Padre(tipoNodo n, tipo√Årbol A)
 Devuelve: tipoNodo
 Efecto: Devuelve el nodo padre de n.
-Requiere: A inicializado y n v·lido en A
+Requiere: A inicializado y n v√°lido en A
 Modifica: N/A*/
 nodo *Arbol2::Padre(nodo *hijo)
 {
@@ -189,20 +200,27 @@ nodo *Arbol2::Padre(nodo *hijo)
     return padre;
 }
 
-/*HijoM·sIzquierdo(tipoNodo n, tipo¡rbol A)
+/*HijoM√°sIzquierdo(tipoNodo n, tipo√Årbol A)
 Devuelve: tipoNodo
-Efecto: Devuelve el nodo hijo m·s izquierdo de n
-Requiere: A inicializado y n v·lido en A
+Efecto: Devuelve el nodo hijo m√°s izquierdo de n
+Requiere: A inicializado y n v√°lido en A
 Modifica: N/A
 */
 nodo *Arbol2::HijoMasIzquierdo(nodo *padre)
 {
-    return padre->HMI->ptrMiElem;
+    if(padre->HMI==0)
+    {
+        return 0;
+    }
+    else
+    {
+        return padre->HMI->ptrMiElem;
+    }
 }
-/*HermanoDerecho(tipoNodo n, tipo¡rbol A)
+/*HermanoDerecho(tipoNodo n, tipo√Årbol A)
 Devuelve: tipoNodo
 Efecto: Devuelve el nodo hermano derecho de n
-Requiere: A inicializado y n v·lido en A
+Requiere: A inicializado y n v√°lido en A
 Modifica: N/A.*/
 nodo *Arbol2::HermanoDerecho(nodo *hermano)
 {
@@ -222,20 +240,20 @@ nodo *Arbol2::HermanoDerecho(nodo *hermano)
     }
     return iter->sig->ptrMiElem;
 }
-/*Etiqueta(tipoNodo n, tipo¡rbol A)
+/*Etiqueta(tipoNodo n, tipo√Årbol A)
 Devuelve: tipoEtiqueta
 Efecto: Devuelve la etiqueta de n
-Requiere: A inicializado y n v·lido en A
+Requiere: A inicializado y n v√°lido en A
 Modifica: N/A*/
 int Arbol2::Etiqueta(nodo *yo)
 {
     return yo->miElem;
 }
 /*
-EsHoja(tipoNodo n, tipo¡rbol A)
+EsHoja(tipoNodo n, tipo√Årbol A)
 Devuelve: tipoBooleano
 Efecto: Devuelve verdadero si n no tiene hijos y falso si no
-Requiere: A inicializado y n v·lido en A
+Requiere: A inicializado y n v√°lido en A
 Modifica: N/A*/
 bool Arbol2::EsHoja(nodo *c)
 {
