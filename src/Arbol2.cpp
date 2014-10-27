@@ -4,7 +4,7 @@ Crear (tipoÁrbol A)
 Efecto: Inicializa en memoria un contenedor de tipo árbol vacío
 Requiere: A no inicializado
 Modifica: A*/
-Arbol2::Arbol2()
+Arbol::Arbol()
 {
     ultimo=0;
 }
@@ -14,7 +14,7 @@ Arbol2::Arbol2()
 Efecto: Elimina lógicamente a A de la memoria
 Requiere: A inicializado
 Modifica: A.*/
-Arbol2::~Arbol2()
+Arbol::~Arbol()
 {
     //dtor
     nodo *iter;
@@ -30,7 +30,7 @@ Arbol2::~Arbol2()
 Efecto: Vacia a A de contenido
 Requiere: A inicializado
 Modifica: A.*/
-void Arbol2::Vaciar()
+void Arbol::Vaciar()
 {
     nodo *iter;
     for (int i=0; i<ultimo; ++i)
@@ -46,7 +46,7 @@ Devuelve: Un booleano
 Efecto: Devuelve verdadero si A está vacío y falso si no
 Requiere: A inicializado
 Modifica: N/A*/
-bool Arbol2::Vacio()
+bool Arbol::Vacio()
 {
     return ultimo==0;
 }
@@ -54,7 +54,7 @@ bool Arbol2::Vacio()
 Efecto: Crea un TipoNodo n que contiene la etiqueta e, y lo establece como la raíz.
 Requiere: A inicializado y vacío, y e válida en A.
 Modifica: A.*/
-void Arbol2::PoneRaiz(int elem)
+void Arbol::PoneRaiz(int elem)
 {
     cout<<"1"<<endl;
     miArbol[0]=new nodo(elem);
@@ -66,7 +66,7 @@ void Arbol2::PoneRaiz(int elem)
 Efecto: Agrega un nodo con la etiqueta e como hijo del nodo n en el árbol A
 Requiere: A inicializado, n válido en A
 Modifica: A*/
-void Arbol2::AgregaHijo(nodo *padre, int e)
+void Arbol::AgregaHijo(nodo *padre, int e)
 {
     nodo *nuevo=new nodo(e);
     CajSubLSE2 *nuevoHMI=new CajSubLSE2(nuevo,padre->HMI);
@@ -78,7 +78,7 @@ void Arbol2::AgregaHijo(nodo *padre, int e)
 Efecto: Elimina n del árbol A
 Requiere: A inicializado, n válido en A y que n sea una hoja
 Modifica: A*/
-void Arbol2::BorraHoja(nodo *aBorrar)
+void Arbol::BorraHoja(nodo *aBorrar)
 {
     int j=0;
     if(aBorrar!=miArbol[0])
@@ -147,7 +147,7 @@ void Arbol2::BorraHoja(nodo *aBorrar)
 Efecto: Actualiza la etiqueta de n a e
 Requiere: A inicializado, n válido en A.
 Modifica: A*/
-void Arbol2::ModificaEtiqueta(nodo *aCambiar, int elem)
+void Arbol::ModificaEtiqueta(nodo *aCambiar, int elem)
 {
     aCambiar->miElem=elem;
 }
@@ -179,7 +179,7 @@ Devuelve: tipoNodo
 Efecto: Devuelve el nodo padre de n.
 Requiere: A inicializado y n válido en A
 Modifica: N/A*/
-nodo *Arbol2::Padre(nodo *hijo)
+nodo *Arbol::Padre(nodo *hijo)
 {
     nodo *padre=0;
     cout<<"a"<<endl;
@@ -206,7 +206,7 @@ Efecto: Devuelve el nodo hijo más izquierdo de n
 Requiere: A inicializado y n válido en A
 Modifica: N/A
 */
-nodo *Arbol2::HijoMasIzquierdo(nodo *padre)
+nodo *Arbol::HijoMasIzquierdo(nodo *padre)
 {
     if(padre->HMI==0)
     {
@@ -222,7 +222,7 @@ Devuelve: tipoNodo
 Efecto: Devuelve el nodo hermano derecho de n
 Requiere: A inicializado y n válido en A
 Modifica: N/A.*/
-nodo *Arbol2::HermanoDerecho(nodo *hermano)
+nodo *Arbol::HermanoDerecho(nodo *hermano)
 {
     nodo *padre=Padre(hermano);
     CajSubLSE2 *iter=padre->HMI;
@@ -245,7 +245,7 @@ Devuelve: tipoEtiqueta
 Efecto: Devuelve la etiqueta de n
 Requiere: A inicializado y n válido en A
 Modifica: N/A*/
-int Arbol2::Etiqueta(nodo *yo)
+int Arbol::Etiqueta(nodo *yo)
 {
     return yo->miElem;
 }
@@ -284,7 +284,7 @@ void Arbol2::mostrarLprincipal()
     }
 }
 
-nodo *Arbol2::Pertenece(int i)
+nodo *Arbol::Pertenece(int i)
 {
     int j=0;
     nodo *miembro=0;
