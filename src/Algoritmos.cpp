@@ -150,9 +150,7 @@ void Algoritmos::listarHijosNodo(Arbol *a, nodo *n)
 
 void Algoritmos::borrarSubArbol(Arbol *a, nodo *n)
 {
-    cout << "entro iter"<< endl;
     borrarSubArbolRe(a,n);
-    cout << "salio iter"<< endl;
 }
 
 
