@@ -1,24 +1,24 @@
 #include "CajLSE.h"
 
-CajLSE::CajLSE()
+nodo::nodo()
 {
     HMI=0;
     sig=0;//ctor
 }
 
-CajLSE::CajLSE(int i)
+nodo::nodo(int i)
 {
     HMI=0;
     sig=0;//ctor
     miElem=i;
 }
 
-CajLSE::~CajLSE()
+nodo::~nodo()
 {
     //dtor
 }
 
-void CajLSE::borrarHijo(CajLSE *aBorrar)
+void nodo::borrarHijo(nodo *aBorrar)
 {
     if(aBorrar==HMI->ptrMiElem){
         HMI=HMI->sig;
@@ -36,13 +36,13 @@ void CajLSE::borrarHijo(CajLSE *aBorrar)
     }
 }
 
-void CajLSE::agregarHijo(CajLSE *h)
+void nodo::agregarHijo(nodo *h)
 {
     CajSubLSE1 *nuevo=new CajSubLSE1(h,HMI);
     HMI=nuevo;
 }
 
-bool CajLSE::esPadreDe(CajLSE *posibleHijo)
+bool nodo::esPadreDe(nodo *posibleHijo)
 {
     CajSubLSE1 *iter=HMI;
     bool noEncontrado=true;
@@ -56,7 +56,7 @@ bool CajLSE::esPadreDe(CajLSE *posibleHijo)
     return !noEncontrado;
 }
 
-bool CajLSE::EsHoja()
+bool nodo::EsHoja()
 {
     bool hoja=false;
     if(HMI==0)
@@ -66,7 +66,7 @@ bool CajLSE::EsHoja()
     return hoja;
 }
 
-void CajLSE::mostrarHijosPantalla()
+void nodo::mostrarHijosPantalla()
 {
     if(HMI==0)
     {
