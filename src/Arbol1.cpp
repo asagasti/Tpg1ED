@@ -231,23 +231,34 @@ Devuelve: tipoNodo
 Efecto: Devuelve el nodo hermano derecho de n
 Requiere: A inicializado y n válido en A
 Modifica: N/A.*/
-nodo *Arbol::HermanoDerecho(nodo *hermano)
+nodo *Arbol::HermanoDerecho(nodo *hermano)/// ////////////////////////////////ya lo arregle
 {
     nodo *padre=Padre(hermano);
     CajSubLSE1 *iter=padre->HMI;
     bool encontrado=false;
-    while (!encontrado)
+    while ((!encontrado)&&(iter!=0))
     {
-        if(!(iter->ptrMiElem==hermano))
-        {
-            iter=iter->sig;
-        }
-        else
+        if((iter->ptrMiElem->miElem==hermano->miElem))
         {
             encontrado=true;
         }
+        else
+        {
+            iter=iter->sig;
+        }
     }
-    return iter->sig->ptrMiElem;
+    if(!encontrado)
+    {
+        return 0;
+    }
+    else if ((iter->sig==0)&&encontrado)
+    {
+        return 0;
+    }
+    else
+    {
+        return iter->sig->ptrMiElem;
+    }
 }
 
 /*Etiqueta(tipoNodo n, tipoÁrbol A)
