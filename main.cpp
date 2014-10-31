@@ -12,6 +12,22 @@ using std::endl;
 class Arbol2;
 class nodo;
 class Algoritmos;
+void llenarVertical(Arbol *a, int numNodos){
+    a->PoneRaiz(0);
+    nodo *iter=a->Raiz();
+    for(int i=1; i<numNodos;++i){
+         a->AgregaHijo(iter,i);
+         iter=a->HijoMasIzquierdo(iter);
+    }
+}
+
+void llenarHorizontal(Arbol *a, int numNodos){
+    a->PoneRaiz(0);
+    for(int i=1; i<numNodos;++i){
+         a->AgregaHijo(a->Raiz(),i);
+    }
+}
+
 int main()
 {
     cout << "Hello world!" << endl;
